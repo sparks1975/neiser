@@ -16,11 +16,12 @@ body {
 h1 {
 	text-align: center;
 	font-size: clamp(1.5rem, 3vw, 2.25rem);
-	line-height: 1.3;	
+	line-height: 1.3;
+	font-weight: normal;	
 }
 
 p {
-	font-size: clamp(.9rem, 1.5vw, 1.25rem);	
+	font-size: clamp(1rem, 3vw, 1.1rem);	
 }
 
 .btn {
@@ -37,6 +38,7 @@ p {
 	cursor: pointer;
 	font-family: 'space mono', sans-serif;
 	margin-top: 16px;
+	letter-spacing: 1.2px;
 }
 
 .fadein {
@@ -61,7 +63,7 @@ p {
 }
 
 main {
-	max-width: 900px;
+	max-width: 880px;
 	margin: 0 auto;
 }
 
@@ -74,7 +76,7 @@ main {
 		height: auto;
 		display: inline-flex;
 
-		@include tablet-min {
+		@include phone-wide-min {
 			width: 3cqw;
 		}
 		
@@ -82,7 +84,7 @@ main {
 		&--h {
 			width: 8.5cqw;
 
-			@include tablet-min {
+			@include phone-wide-min {
 			  width: 4.5cqw;
 			}
 			
@@ -104,15 +106,23 @@ main {
 
 	@include tablet-wide-min {
 		gap: 2rem;
-		padding: 120px 40px 80px;
+		padding: 80px 80px 80px;
 	}
 
 	&__logo {
 		position: absolute;
-		top: 24px;
-		left: -24px;
-		width: 120px;
-		min-height: 120px;
+		top: -16px;
+		left: -25px;
+		width: 80px;
+		min-height: 80px;
+
+		@include tablet-wide-min {
+			top: 0;
+			left: 10px;
+			width: 120px;
+			min-height: 120px;
+		}
+		
 	}
 	
 
@@ -125,7 +135,7 @@ main {
 		}
 		
 
-		@include tablet-wide-min {
+		@include tablet-min {
 		  grid-column: auto / span 8;
 		}
 
@@ -138,13 +148,15 @@ main {
 
 	&__text {
 		grid-column: auto / span 24;
+		padding: 40px 0 0;
 
 		@include phone-wide-min {
 		  grid-column: auto / span 12;
+		  padding: 0;
 		}
 		
 
-		@include tablet-wide-min {
+		@include tablet-min {
 		  grid-column: auto / span 16;
 		}
 
