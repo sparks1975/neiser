@@ -1,0 +1,177 @@
+@font-face {
+	font-family: 'spoof';
+	src: url('../fonts/spoof.woff') format('woff');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+body {
+	margin: 0;
+	background: $color-1;
+	font-family: 'spoof', sans-serif;
+	color: $color-2;
+	line-height: 1.6;
+}
+
+h1 {
+	text-align: center;
+	font-size: clamp(1.5rem, 3vw, 2.25rem);
+	line-height: 1.3;	
+}
+
+p {
+	font-size: clamp(.9rem, 1.5vw, 1.25rem);	
+}
+
+.btn {
+	padding: 12px 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border-radius: 8px;
+	border: solid 1px $color-2;
+	color: $color-2;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-family: 'space mono', sans-serif;
+	margin-top: 16px;
+}
+
+.fadein {
+	opacity: 0;
+	transition: opacity .5s ease;
+}
+
+.faded {
+	opacity: 1;
+}
+
+.wrapper {
+	position: relative;
+	min-height: 100vh;
+	z-index: 2;
+	padding: 42px 32px;
+
+	@include tablet-wide-min {
+	  padding: 64px 42px;
+	}
+	
+}
+
+main {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.icon-text {
+	container-type: inline-size;
+	container-name: icon_text;
+
+	&__icon {
+		width: 6cqw;
+		height: auto;
+		display: inline-flex;
+
+		@include tablet-min {
+			width: 3cqw;
+		}
+		
+
+		&--h {
+			width: 8.5cqw;
+
+			@include tablet-min {
+			  width: 4.5cqw;
+			}
+			
+			
+		}
+
+		svg {
+			max-width: 100%;
+		}
+	}
+}
+
+.photo-text {
+	@include grid;
+	padding: 40px 20px;
+	position: relative;
+	overflow: visible;
+
+	@include tablet-wide-min {
+		gap: 2rem;
+		padding: 120px 40px 80px;
+	}
+
+	&__logo {
+		position: absolute;
+		top: 24px;
+		left: -24px;
+		width: 120px;
+		min-height: 120px;
+	}
+	
+
+	&__photo {
+		grid-column: auto / span 24;
+
+		@include phone-wide-min {
+		  grid-column: auto / span 12;
+		  padding-right: 16px;
+		}
+		
+
+		@include tablet-wide-min {
+		  grid-column: auto / span 8;
+		}
+
+		img {
+			display: block;
+			max-width: 100%;
+		}
+		
+	}
+
+	&__text {
+		grid-column: auto / span 24;
+
+		@include phone-wide-min {
+		  grid-column: auto / span 12;
+		}
+		
+
+		@include tablet-wide-min {
+		  grid-column: auto / span 16;
+		}
+
+		p {
+			margin-top: 0;
+		}
+		
+	}
+}
+
+.contact {
+	padding: 40px 20px;
+	border-top: solid 2px $color-2;
+	border-bottom: solid 2px $color-2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	@include tablet-wide-min {
+		padding: 60px 20px;
+	}
+
+	p {
+		font-family: 'space mono', sans-serif;
+		font-size: clamp(.9rem, 1.2vw, 1rem);
+		line-height: 2;
+		text-align: center;
+	}
+}
+

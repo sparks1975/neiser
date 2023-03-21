@@ -1,0 +1,25 @@
+$content-width: 1200px;
+$color-1: #1e1e1e;
+$color-2: #e0dfcd;
+$font-style: 'Montserrat', sans-serif;
+$font-color: $color-1;
+$heading-font: 'Montserrat', sans-serif;
+
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin grid {
+	display: grid;
+	grid-template-columns: repeat(24, 1fr);
+	grid-row-gap: 10px;
+	grid-column-gap: 10px;
+	@content;
+}

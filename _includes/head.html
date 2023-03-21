@@ -1,0 +1,11 @@
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="{{description}}">
+	<meta property="og:image" content="{{image}}">
+	<meta name="robots" content="index,follow" />
+	<title>{% if page.post_title %}{{ page.post_title }}{% else %}{{ page.title }}{% endif %}</title>
+	<link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+</head>
