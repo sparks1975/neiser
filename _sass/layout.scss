@@ -16,12 +16,12 @@ body {
 h1 {
 	text-align: center;
 	font-size: clamp(1.5rem, 3vw, 2.25rem);
-	line-height: 1.3;
+	line-height: 1.5;
 	font-weight: normal;	
 }
 
 p {
-	font-size: clamp(1rem, 3vw, 1.1rem);	
+	font-size: clamp(1rem, 1vw, 1.05rem);	
 }
 
 .btn {
@@ -39,6 +39,41 @@ p {
 	font-family: 'space mono', sans-serif;
 	margin-top: 16px;
 	letter-spacing: 1.2px;
+	position: relative;
+	overflow: hidden;
+	transition: all 1s ease-in-out;
+
+	span {
+		position: relative;
+		z-index: 1;
+	}
+
+	&:before {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 200%;
+		height: 500%;
+		margin-left: -100%;
+		margin-top: -100%;
+		content: '';
+		border-color: #fff;
+		border-style: solid;
+		border-width: 1px;
+		border-radius: 100%;
+		transform-origin: center center;
+		transition: all 1s ease-in-out;
+		box-sizing: border-box;
+	  }
+	
+	  &:hover {
+		color: $color-1;
+	
+		&:before {
+		  border-width: 200px;
+		}
+	  }
 }
 
 .fadein {
@@ -77,7 +112,7 @@ main {
 		display: inline-flex;
 
 		@include phone-wide-min {
-			width: 3cqw;
+			width: 3.5cqw;
 		}
 		
 
@@ -105,8 +140,8 @@ main {
 	overflow: visible;
 
 	@include tablet-wide-min {
-		gap: 2rem;
-		padding: 80px 80px 80px;
+		gap: 1rem;
+		padding: 80px 120px 80px;
 	}
 
 	&__logo {
@@ -118,7 +153,7 @@ main {
 
 		@include tablet-wide-min {
 			top: 0;
-			left: 10px;
+			left: 42px;
 			width: 120px;
 			min-height: 120px;
 		}
@@ -136,7 +171,7 @@ main {
 		
 
 		@include tablet-min {
-		  grid-column: auto / span 8;
+		  grid-column: auto / span 10;
 		}
 
 		img {
@@ -157,7 +192,7 @@ main {
 		
 
 		@include tablet-min {
-		  grid-column: auto / span 16;
+		  grid-column: auto / span 14;
 		}
 
 		p {
