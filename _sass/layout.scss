@@ -69,6 +69,7 @@ p {
 	
 	  &:hover {
 		color: $color-1;
+		border-width: 0px;
 	
 		&:before {
 		  border-width: 200px;
